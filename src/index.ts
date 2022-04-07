@@ -2,6 +2,7 @@ import { Client, Intents } from "discord.js";
 import config from "config";
 import { search } from "./search";
 import { parse } from "./parse";
+import { embed } from "./embed";
 
 const TOKEN = config.get<string>("bot.token");
 
@@ -28,7 +29,9 @@ client.on("messageCreate", async message => {
             const html = await search(m![1]!);
             const result = parse(html);
             
-            await message.reply(JSON.stringify(result));
+            await message.reply({
+                embeds: [ embed(result) ]
+            });
         } else {
             await message.reply("Unable to parse your search");
         }
