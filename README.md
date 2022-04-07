@@ -16,6 +16,8 @@ A Discord bot that searches Bing, because why not
     </a>
 </p>
 
+![bingbong demo](assets/bingbong%20demo.PNG)
+
 ## Table of Contents
 - [Config](#config)
 - [Usage](#usage)
