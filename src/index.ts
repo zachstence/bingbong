@@ -3,7 +3,6 @@ import config from "config";
 import { search } from "./search";
 import { parse } from "./parse";
 import { embed } from "./embed";
-import { BING_ICON_URL } from "./constants";
 
 const TOKEN = config.get<string>("bot.token");
 
@@ -20,7 +19,6 @@ client.login(TOKEN);
 
 client.on("ready", () => {
     console.log(`${client.user?.username} is online`);
-    client.user?.setAvatar(BING_ICON_URL);
 });
 
 client.on("messageCreate", async message => {
