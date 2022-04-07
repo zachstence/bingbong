@@ -22,12 +22,15 @@ client.on("ready", () => {
 
 client.on("messageCreate", async message => {
     if (client.user && message.mentions.users.has(client.user.id)) {
-        await message.reply("mentioned");
+        const m = message.content.match(/^<@\d+> (.*)$/);
+        
+        if (m && m[1]) {
+            const html = await search(m![1]!);
+            const result = parse(html);
+            
+            await message.reply(JSON.stringify(result));
+        } else {
+            await message.reply("Unable to parse your search");
+        }
     }
 });
-
-(async () => {
-    const html = await search("nice query hello");
-    const result = parse(html);
-    console.log(result);
-})();
