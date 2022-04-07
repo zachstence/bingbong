@@ -1,0 +1,32 @@
+{
+  "name": "bingbong",
+  "version": "1.0.0",
+  "description": "A Discord bot that searches Bing, because why not",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachstence/bingbong.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachstence/bingbong/issues"
+  },
+  "homepage": "https://github.com/zachstence/bingbong#readme",
+  "devDependencies": {
+    "@types/config": "^0.0.41",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "config": "^3.3.7",
+    "discord.js": "^13.6.0"
+  }
+}
