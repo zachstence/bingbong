@@ -1,5 +1,7 @@
 import { Client, Intents } from "discord.js";
 import config from "config";
+import { search } from "./search";
+import { parse } from "./parse";
 
 const TOKEN = config.get<string>("bot.token");
 
@@ -23,3 +25,9 @@ client.on("messageCreate", async message => {
         await message.reply("mentioned");
     }
 });
+
+(async () => {
+    const html = await search("nice query hello");
+    const result = parse(html);
+    console.log(result);
+})();
