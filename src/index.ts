@@ -3,6 +3,7 @@ import config from "config";
 import { search } from "./search";
 import { parse } from "./parse";
 import { embed } from "./embed";
+import { BING_ICON_URL } from "./constants";
 
 const TOKEN = config.get<string>("bot.token");
 
@@ -19,11 +20,12 @@ client.login(TOKEN);
 
 client.on("ready", () => {
     console.log(`${client.user?.username} is online`);
+    client.user?.setAvatar(BING_ICON_URL);
 });
 
 client.on("messageCreate", async message => {
     if (client.user && message.mentions.users.has(client.user.id)) {
-        const m = message.content.match(/^<@\d+> (.*)$/);
+        const m = message.content.match(/^<.*> (.*)$/);
         
         if (m && m[1]) {
             const html = await search(m![1]!);
