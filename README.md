@@ -38,7 +38,7 @@ Create a config file following the format in [`config/default.json`](config/defa
 
 | Config                  | Description                                                  | Example                                                       |
 | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------- |
-| `bot.token`             | Your Discord bot's API token |                               | `OTYxNDQ5NTI3NzYyNjM2ODUw.Yk5Jpg.qJusxStFqRyy5CyYO4eIrmBycck` |
+| `bot.token`             | Your Discord bot's API token                                 | `OTYxNDQ5NTI3NzYyNjM2ODUw.Yk5Jpg.qJusxStFqRyy5CyYO4eIrmBycck` |
 
 ## Usage
 Run `bingbong` using your `config.json`
